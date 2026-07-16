@@ -498,6 +498,67 @@
             text-transform: uppercase;
         }
 
+        .placeholder-ui .design-thinking {
+            padding-top: 18px;
+            border-top: 1px solid rgba(17, 19, 21, 0.18);
+        }
+
+        .placeholder-ui .design-thinking-label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: Inter, Arial, sans-serif;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.16em;
+            color: var(--text);
+        }
+
+        .placeholder-ui .design-thinking-label::before {
+            content: '';
+            width: 24px;
+            height: 2px;
+            background: var(--accent);
+        }
+
+        .placeholder-ui .design-thinking-copy {
+            margin-top: 9px;
+            font-size: 11px;
+            line-height: 1.55;
+            color: #53565A;
+        }
+
+        .placeholder-ui .design-process {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 4px;
+            margin-top: 16px;
+        }
+
+        .placeholder-ui .design-step {
+            position: relative;
+            padding-top: 10px;
+            border-top: 1px solid rgba(17, 19, 21, 0.22);
+            font-family: Inter, Arial, sans-serif;
+            font-size: 7px;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            color: #5F6265;
+            text-align: center;
+        }
+
+        .placeholder-ui .design-step::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: 50%;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--accent);
+            transform: translateX(-50%);
+        }
+
         /* ---------------------------------------------------------------------
            05. KEY NUMBERS
         --------------------------------------------------------------------- */
@@ -2098,7 +2159,17 @@
                                 <p class="brand-name">MARKETER.B<br>PORTFOLIO</p>
                                 <p class="brand-title">MARKETING PLANNING EXPERT</p>
                             </div>
-                            <div></div>
+                            <div class="design-thinking" aria-label="Design Thinking: 공감, 정의, 아이디어, 프로토타입, 검증">
+                                <p class="design-thinking-label">DESIGN THINKING</p>
+                                <p class="design-thinking-copy">사람을 이해하고 문제를 정의하며,<br>가능성을 빠르게 검증합니다.</p>
+                                <div class="design-process" aria-hidden="true">
+                                    <span class="design-step">EMPATHIZE</span>
+                                    <span class="design-step">DEFINE</span>
+                                    <span class="design-step">IDEATE</span>
+                                    <span class="design-step">PROTOTYPE</span>
+                                    <span class="design-step">TEST</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -2700,7 +2771,7 @@
                 <div class="about-graphic">
                     <svg class="about-visual" viewBox="0 0 560 560" role="img" aria-labelledby="philosophyVisualTitle philosophyVisualDesc">
                         <title id="philosophyVisualTitle">마케팅 의사결정 구조</title>
-                        <desc id="philosophyVisualDesc">데이터, 시장, 사람에 대한 이해를 구조화된 전략으로 연결해 시장의 선택을 만드는 과정</desc>
+                        <desc id="philosophyVisualDesc">데이터, 트렌드, 고객에 대한 이해를 구조화된 전략으로 연결해 시장의 선택을 만드는 과정</desc>
 
                         <rect width="560" height="560" fill="#111315"></rect>
 
@@ -2729,12 +2800,12 @@
                         <g>
                             <circle class="input-node" cx="280" cy="145" r="58"></circle>
                             <text class="node-en" x="280" y="140" text-anchor="middle">MARKET</text>
-                            <text class="node-ko" x="280" y="158" text-anchor="middle">맥락</text>
+                            <text class="node-ko" x="280" y="158" text-anchor="middle">트렌드</text>
                         </g>
                         <g>
                             <circle class="input-node" cx="442" cy="145" r="58"></circle>
-                            <text class="node-en" x="442" y="140" text-anchor="middle">PEOPLE</text>
-                            <text class="node-ko" x="442" y="158" text-anchor="middle">선택</text>
+                            <text class="node-en" x="442" y="140" text-anchor="middle">CONSUMER</text>
+                            <text class="node-ko" x="442" y="158" text-anchor="middle">고객</text>
                         </g>
 
                         <circle class="strategy-ring" cx="280" cy="318" r="112"></circle>
