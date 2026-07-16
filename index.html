@@ -1214,36 +1214,127 @@
         }
 
         .about-graphic {
-            background-color: var(--surface-muted);
+            background-color: var(--dark);
             aspect-ratio: 1 / 1;
             border: 1px solid var(--line);
             position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            overflow: hidden;
+            isolation: isolate;
         }
 
-        .about-graphic-ui {
-            width: 80%;
-            height: 80%;
-            border: 1px solid var(--line);
-            position: relative;
-            padding: 32px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            background-color: var(--surface);
+        .about-visual {
+            width: 100%;
+            height: 100%;
+            display: block;
         }
 
-        .about-graphic-ui .circle {
-            width: 60px;
-            height: 60px;
-            border: 2px solid var(--accent);
-            border-radius: 50%;
-            position: absolute;
-            top: 40%;
-            left: 40%;
-            opacity: 0.2;
+        .about-visual .visual-kicker,
+        .about-visual .visual-index,
+        .about-visual .node-en,
+        .about-visual .node-ko,
+        .about-visual .core-en,
+        .about-visual .core-ko,
+        .about-visual .outcome-en,
+        .about-visual .outcome-ko {
+            font-family: Inter, Arial, sans-serif;
+        }
+
+        .about-visual .visual-kicker {
+            fill: #FFFFFF;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+        }
+
+        .about-visual .visual-index {
+            fill: var(--dark-sub);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+        }
+
+        .about-visual .grid-line {
+            stroke: rgba(255, 255, 255, 0.08);
+            stroke-width: 1;
+        }
+
+        .about-visual .connector {
+            fill: none;
+            stroke: #5A6268;
+            stroke-width: 1.5;
+            stroke-dasharray: 4 6;
+        }
+
+        .about-visual .connector-accent {
+            fill: none;
+            stroke: var(--accent);
+            stroke-width: 2;
+        }
+
+        .about-visual .input-node {
+            fill: #1C2023;
+            stroke: #465057;
+            stroke-width: 1.5;
+        }
+
+        .about-visual .node-en {
+            fill: #FFFFFF;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+        }
+
+        .about-visual .node-ko {
+            fill: var(--dark-sub);
+            font-size: 10px;
+            font-weight: 600;
+        }
+
+        .about-visual .strategy-ring {
+            fill: rgba(0, 142, 214, 0.09);
+            stroke: rgba(0, 142, 214, 0.35);
+            stroke-width: 1;
+            transition: transform 0.3s ease;
+            transform-origin: 280px 318px;
+        }
+
+        .about-visual .strategy-core {
+            fill: var(--accent);
+            transition: transform 0.3s ease;
+            transform-origin: 280px 318px;
+        }
+
+        .about-graphic:hover .strategy-ring { transform: scale(1.04); }
+        .about-graphic:hover .strategy-core { transform: scale(1.025); }
+
+        .about-visual .core-en {
+            fill: #FFFFFF;
+            font-size: 18px;
+            font-weight: 900;
+            letter-spacing: 0.06em;
+        }
+
+        .about-visual .core-ko {
+            fill: rgba(255, 255, 255, 0.78);
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .about-visual .outcome-box {
+            fill: #FFFFFF;
+        }
+
+        .about-visual .outcome-en {
+            fill: var(--text);
+            font-size: 15px;
+            font-weight: 900;
+            letter-spacing: 0.08em;
+        }
+
+        .about-visual .outcome-ko {
+            fill: var(--accent-dark);
+            font-size: 11px;
+            font-weight: 800;
         }
 
         /* ---------------------------------------------------------------------
@@ -2607,17 +2698,58 @@
                 </div>
 
                 <div class="about-graphic">
-                    <div class="about-graphic-ui">
-                        <div style="border-bottom: 1px solid var(--line); padding-bottom: 12px;">
-                            <span style="font-family: Inter, Arial, sans-serif; font-size: 11px; font-weight: 700; color: var(--accent);">CORE VALUES</span>
-                        </div>
-                        <div class="circle"></div>
-                        <div style="font-size: 14px; font-weight: 700; color: var(--text-sub); display: flex; flex-direction: column; gap: 8px;">
-                            <span>• DATA INTEGRITY</span>
-                            <span>• MARKET RELEVANCE</span>
-                            <span>• STRUCTURAL THINKING</span>
-                        </div>
-                    </div>
+                    <svg class="about-visual" viewBox="0 0 560 560" role="img" aria-labelledby="philosophyVisualTitle philosophyVisualDesc">
+                        <title id="philosophyVisualTitle">마케팅 의사결정 구조</title>
+                        <desc id="philosophyVisualDesc">데이터, 시장, 사람에 대한 이해를 구조화된 전략으로 연결해 시장의 선택을 만드는 과정</desc>
+
+                        <rect width="560" height="560" fill="#111315"></rect>
+
+                        <g aria-hidden="true">
+                            <line class="grid-line" x1="40" y1="80" x2="520" y2="80"></line>
+                            <line class="grid-line" x1="40" y1="196" x2="520" y2="196"></line>
+                            <line class="grid-line" x1="40" y1="440" x2="520" y2="440"></line>
+                            <line class="grid-line" x1="40" y1="520" x2="520" y2="520"></line>
+                            <line class="grid-line" x1="40" y1="80" x2="40" y2="520"></line>
+                            <line class="grid-line" x1="280" y1="80" x2="280" y2="520"></line>
+                            <line class="grid-line" x1="520" y1="80" x2="520" y2="520"></line>
+                        </g>
+
+                        <text class="visual-kicker" x="40" y="48">MARKETING DECISION SYSTEM</text>
+                        <text class="visual-index" x="520" y="48" text-anchor="end">PHILOSOPHY 01</text>
+
+                        <path class="connector" d="M118 165 C145 220 202 242 236 267"></path>
+                        <path class="connector" d="M280 165 L280 238"></path>
+                        <path class="connector" d="M442 165 C415 220 358 242 324 267"></path>
+
+                        <g>
+                            <circle class="input-node" cx="118" cy="145" r="58"></circle>
+                            <text class="node-en" x="118" y="140" text-anchor="middle">DATA</text>
+                            <text class="node-ko" x="118" y="158" text-anchor="middle">근거</text>
+                        </g>
+                        <g>
+                            <circle class="input-node" cx="280" cy="145" r="58"></circle>
+                            <text class="node-en" x="280" y="140" text-anchor="middle">MARKET</text>
+                            <text class="node-ko" x="280" y="158" text-anchor="middle">맥락</text>
+                        </g>
+                        <g>
+                            <circle class="input-node" cx="442" cy="145" r="58"></circle>
+                            <text class="node-en" x="442" y="140" text-anchor="middle">PEOPLE</text>
+                            <text class="node-ko" x="442" y="158" text-anchor="middle">선택</text>
+                        </g>
+
+                        <circle class="strategy-ring" cx="280" cy="318" r="112"></circle>
+                        <circle class="strategy-ring" cx="280" cy="318" r="92"></circle>
+                        <circle class="strategy-core" cx="280" cy="318" r="72"></circle>
+                        <text class="core-en" x="280" y="313" text-anchor="middle">STRATEGY</text>
+                        <text class="core-ko" x="280" y="336" text-anchor="middle">구조화된 전략</text>
+
+                        <path class="connector-accent" d="M280 390 L280 448"></path>
+                        <path d="M272 440 L280 450 L288 440" fill="none" stroke="#008ED6" stroke-width="2"></path>
+
+                        <rect class="outcome-box" x="154" y="458" width="252" height="68" rx="2"></rect>
+                        <text class="outcome-en" x="280" y="486" text-anchor="middle">MARKET CHOICE</text>
+                        <text class="outcome-ko" x="280" y="507" text-anchor="middle">기업의 가능성을 시장의 선택으로</text>
+                    </svg>
                 </div>
             </div>
         </div>
