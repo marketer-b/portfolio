@@ -668,67 +668,79 @@
         .positioning .section-copy {
             color: var(--dark-sub);
             font-size: 18px;
-            margin-bottom: 64px;
+            margin-bottom: 40px;
         }
 
         .flow-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            list-style: none;
+            margin: 0;
+            padding: 0;
             position: relative;
-            margin-top: 40px;
-            padding-top: 20px;
         }
 
         .flow-step {
-            flex: 1;
+            min-width: 0;
             position: relative;
-            padding: 24px;
+            padding: 0 12px;
             text-align: center;
         }
 
-        .flow-step::before {
+        .flow-step:not(:last-child)::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 10%;
-            width: 80%;
+            z-index: 0;
+            top: 17px;
+            left: calc(50% + 18px);
+            width: calc(100% - 36px);
             height: 1px;
-            background-color: rgba(255, 255, 255, 0.15);
-        }
-
-        .flow-step.active::before {
-            background-color: var(--accent);
-            height: 2px;
+            background-color: rgba(255, 255, 255, 0.2);
         }
 
         .flow-step .step-idx {
-            font-family: Inter, Arial, sans-serif;
-            font-size: 11px;
-            font-weight: 700;
+            position: relative;
+            z-index: 1;
+            width: 34px;
+            height: 34px;
+            margin: 0 auto 14px;
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            border-radius: 50%;
+            background-color: var(--dark);
             color: var(--dark-sub);
-            display: block;
-            margin-bottom: 8px;
-            letter-spacing: 0.1em;
-        }
-
-        .flow-step.active .step-idx {
-            color: var(--accent);
-        }
-
-        .flow-step .step-name {
-            font-family: Inter, Arial, sans-serif;
-            font-size: 16px;
-            font-weight: 700;
-            letter-spacing: -0.01em;
-        }
-
-        .flow-arrow {
             display: flex;
             align-items: center;
             justify-content: center;
+            font-family: Inter, Arial, sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+        }
+
+        .flow-step.active .step-idx {
+            background-color: var(--accent);
+            border-color: var(--accent);
+            color: var(--surface);
+        }
+
+        .flow-step .step-name {
+            display: flex;
+            min-height: 2.6em;
+            align-items: flex-start;
+            justify-content: center;
+            font-family: Inter, Arial, sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 1.3;
+            letter-spacing: -0.01em;
+        }
+
+        .flow-step .step-detail {
+            display: block;
+            margin-top: 8px;
             color: var(--dark-sub);
-            padding: 0 8px;
+            font-size: 12px;
+            line-height: 1.45;
         }
 
         /* ---------------------------------------------------------------------
@@ -1959,11 +1971,28 @@
             .work-grid { grid-template-columns: 1fr; }
             .framework-grid { grid-template-columns: repeat(2, 1fr); }
             
-            .positioning .flow-container { flex-direction: column; gap: 16px; align-items: stretch; }
-            .flow-step { text-align: left; padding: 16px 20px; }
-            .flow-step::before { left: 0; top: 10%; width: 2px; height: 80%; }
-            .flow-step.active::before { width: 3px; height: 80%; }
-            .flow-arrow { transform: rotate(90deg); margin: 8px 0; width: 24px; }
+            .flow-step { padding: 0; }
+            .flow-step:not(:last-child)::before {
+                top: 14px;
+                left: calc(50% + 15px);
+                width: calc(100% - 30px);
+            }
+            .flow-step .step-idx {
+                width: 28px;
+                height: 28px;
+                margin-bottom: 10px;
+                font-size: 10px;
+            }
+            .flow-step .step-name {
+                min-height: 2.5em;
+                font-size: clamp(10px, 2.8vw, 13px);
+                line-height: 1.25;
+            }
+            .flow-step .step-detail {
+                margin-top: 5px;
+                font-size: clamp(9px, 2.4vw, 11px);
+                line-height: 1.35;
+            }
             
             .resume-box { padding: 32px 24px; }
             .resume-header { flex-direction: column; gap: 16px; text-align: left; }
@@ -2149,9 +2178,8 @@
             .number-card .num-index { margin-bottom: 12px; }
             .number-card .num-big { margin-bottom: 8px; }
 
-            .positioning .section-copy { margin-bottom: 32px; }
-            .flow-container { margin-top: 24px; }
-            .flow-step { padding: 12px 16px; }
+            .positioning .section-copy { margin-bottom: 22px; }
+            .flow-container { margin-top: 0; }
 
             .capability-grid { grid-template-columns: 1fr; gap: 14px; }
             .capability-card { padding: 22px; }
@@ -2401,27 +2429,28 @@
                 퍼포먼스 마케팅을 통해 고객의 유입과 전환을 분석해 왔고, 이제는 제품의 시장 가능성, 타깃, 가격, 유통, 브랜드 메시지까지 고객이 제품을 선택하기 전의 전체 구조를 설계합니다.
             </p>
 
-            <div class="flow-container">
-                <div class="flow-step">
+            <ol class="flow-container" aria-label="마케팅 역량 확장 흐름">
+                <li class="flow-step">
                     <span class="step-idx">01</span>
                     <span class="step-name">Performance Marketing</span>
-                </div>
-                <div class="flow-arrow">→</div>
-                <div class="flow-step">
+                    <span class="step-detail">유입·전환 분석</span>
+                </li>
+                <li class="flow-step">
                     <span class="step-idx">02</span>
                     <span class="step-name">Growth Strategy</span>
-                </div>
-                <div class="flow-arrow">→</div>
-                <div class="flow-step">
+                    <span class="step-detail">시장성·타깃 전략</span>
+                </li>
+                <li class="flow-step">
                     <span class="step-idx">03</span>
                     <span class="step-name">Product Marketing</span>
-                </div>
-                <div class="flow-arrow">→</div>
-                <div class="flow-step active">
+                    <span class="step-detail">가격·유통·메시지</span>
+                </li>
+                <li class="flow-step active" aria-current="step">
                     <span class="step-idx">04</span>
                     <span class="step-name">GTM &amp; Business Dev</span>
-                </div>
-            </div>
+                    <span class="step-detail">시장 진입·사업화</span>
+                </li>
+            </ol>
         </div>
     </section>
 
