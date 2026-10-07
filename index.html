@@ -1122,6 +1122,26 @@
             word-break: keep-all;
         }
 
+        /* Asterisk markers keep career responsibilities visually distinct. */
+        .career-resume-list ul {
+            list-style: none;
+            padding-left: 20px;
+            margin-top: 8px;
+        }
+
+        .career-resume-list li {
+            position: relative;
+        }
+
+        .career-resume-list li::before {
+            content: '*';
+            position: absolute;
+            top: 0;
+            left: -16px;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
         /* ---------------------------------------------------------------------
            10. MARKETING FRAMEWORK
         --------------------------------------------------------------------- */
