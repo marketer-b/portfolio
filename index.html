@@ -1342,7 +1342,7 @@
         }
 
         .about-graphic {
-            background-color: var(--dark);
+            background-color: var(--bg);
             aspect-ratio: 1 / 1;
             border: 1px solid var(--line);
             position: relative;
@@ -1368,27 +1368,27 @@
         }
 
         .about-visual .visual-kicker {
-            fill: #FFFFFF;
+            fill: var(--text);
             font-size: 13px;
             font-weight: 800;
             letter-spacing: 0.14em;
         }
 
         .about-visual .visual-index {
-            fill: var(--dark-sub);
+            fill: var(--text-sub);
             font-size: 10px;
             font-weight: 700;
             letter-spacing: 0.1em;
         }
 
         .about-visual .grid-line {
-            stroke: rgba(255, 255, 255, 0.08);
+            stroke: rgba(22, 22, 22, 0.08);
             stroke-width: 1;
         }
 
         .about-visual .connector {
             fill: none;
-            stroke: #5A6268;
+            stroke: #8D9499;
             stroke-width: 1.5;
             stroke-dasharray: 4 6;
         }
@@ -1400,20 +1400,20 @@
         }
 
         .about-visual .input-node {
-            fill: #1C2023;
-            stroke: #465057;
+            fill: var(--surface);
+            stroke: var(--line);
             stroke-width: 1.5;
         }
 
         .about-visual .node-en {
-            fill: #FFFFFF;
+            fill: var(--text);
             font-size: 13px;
             font-weight: 800;
             letter-spacing: 0.06em;
         }
 
         .about-visual .node-ko {
-            fill: var(--dark-sub);
+            fill: var(--text-sub);
             font-size: 10px;
             font-weight: 600;
         }
@@ -1449,7 +1449,9 @@
         }
 
         .about-visual .outcome-box {
-            fill: #FFFFFF;
+            fill: var(--surface);
+            stroke: var(--line);
+            stroke-width: 1;
         }
 
         .about-visual .outcome-en {
@@ -3134,7 +3136,7 @@
                         <title id="philosophyVisualTitle">마케팅 의사결정 구조</title>
                         <desc id="philosophyVisualDesc">데이터, 트렌드, 고객에 대한 이해를 구조화된 전략으로 연결해 시장의 선택을 만드는 과정</desc>
 
-                        <rect width="560" height="560" fill="#111315"></rect>
+                        <rect width="560" height="560" fill="#F4F3EF"></rect>
 
                         <g aria-hidden="true">
                             <line class="grid-line" x1="40" y1="80" x2="520" y2="80"></line>
