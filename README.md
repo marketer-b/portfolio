@@ -1,9 +1,9 @@
-# 김봉성 포트폴리오
+# 김봉성 마케팅 포트폴리오
 
-신사업·GTM·브랜드 마케팅 리더 김봉성의 포트폴리오 웹사이트입니다.
+**MARKETER.B · 기업의 가능성을 시장의 선택으로.**
 
-- Live: https://marketer-b.github.io/portfolio/
-- 주요 분야: New Business, GTM Strategy, Product Marketing, Brand & Growth
-- 문의: sosoin01@naver.com
+신사업·GTM·퍼포먼스·브랜드 전략을 연결하는 마케팅 기획 전문가 김봉성의 포트폴리오입니다. 현재 이엠텍에서 전자·음향·뷰티 디바이스의 신제품 GTM, 이커머스, 유통 및 브랜드 제휴를 담당합니다. 코웨이·미리캔버스·정원e샵 등 이전 프로젝트와 주요 경력을 확인할 수 있습니다.
 
-`main` 브랜치에 변경 사항이 반영되면 GitHub Pages 배포 워크플로가 실행됩니다.
+- **Portfolio:** https://marketer-b.github.io/portfolio/
+- **주요 분야:** 신제품 GTM, 상품·브랜드 포지셔닝, B2B 제휴·유통 제안, 퍼포먼스·이커머스 전략
+- **문의:** sosoin01@naver.com
